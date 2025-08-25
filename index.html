@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Form starts -->
+
+  <div class="flex justify-center">
+    <div class="container  min-h-screen w-[700px]">
+
+      <!-- FIRST DIV -->
+      <div class="first w-full h-[30px] bg-no-repeat bg-center" style="background-image: url(./assets/images/logo-full.svg);">
+        <!-- <img src="./assets/images/logo-full.svg" alt=""> -->
+         <!-- <p>solos</p> -->
+      </div>
+
+      <!-- SECOND DIV -->
+      <div class="second text-center">
+        <p class="text-[2.5rem]">Your Journey to Coding Conf</p> 
+        <p class="text-[2.5rem]">2025 Starts Here!</p>
+        <p class="text-gray-400">Secure your spot at next year's biggest coding conference.</p>
+      </div>
+
+      <!-- THIRD DIV -->
+      <div class="third border-white border flex justify-center">
+        <div>
+          <div class="">
+            <label for="file">Upload Avatar</label>
+            <br>
+            <input type="file" name="filetoupload" class="border border-white border-dashed border-[2px] rounded-[10px] h-[100px] w-full">
+          </div>
+
+          <div>
+            <label for="text">Full Name</label>
+            <br>
+            <input type="text" class="border-white outline-white bg-gray-900 rounded-[5px] w-[400px]">
+          </div>
+
+          <div>
+            <label for="text">Email Address</label>
+            <br>
+            <input type="email" placeholder="example@email.com"  class="border-white outline-white bg-gray-900 rounded-[5px] w-[400px]">
+          </div>
+ 
+          <div>
+            <label for="text">GitHub Username</label>
+            <br>
+            <input type="text" placeholder="@yourusername"  class="border-white outline-white bg-gray-900 rounded-[5px] w-[400px]">
+          </div>
+
+          <button class="bg-[#f57261ff] w-[400px]">Generate My Ticket</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  <!-- Upload Avatar
+  Drag and drop or click to upload
+  Upload your photo (JPG or PNG, max size: 500KB).
+
+  Full Name -->
+
+  
+  
+
+  
+  
+
+
+
+  <!-- Form ends -->
+
+  <!-- Generated tickets starts -->
+
+  Congrats, <!-- Full Name -->! Your ticket is ready.
+
+  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
+
+  Coding Conf
+  Jan 31, 2025 / Austin, TX
+
+  <!-- Generated tickets ends -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
