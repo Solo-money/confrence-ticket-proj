@@ -21,7 +21,8 @@ const customerGithub = document.querySelector('.customerGithub');
 const cutomerTicketNumber = document.querySelector('.ticketNumber');
 const errorMessage = document.querySelector('.error-message');
 const ticketImage = document.getElementById('ticketImage');
-const formImage = document.querySelector('.form-image')
+const formImage = document.querySelector('.form-image');
+const ticketNumber = document.querySelector('.ticketNumber');
 
 // METHOD OF UPLOADING AND USING IMAGE USING FILEREADER METHOD
 
@@ -50,7 +51,8 @@ const formImage = document.querySelector('.form-image')
 // METHOD OF UPLOAD AND DISPLAY USING URL.createObjectURL() (this just creates a temporary link)
 
 let uploadedImage ='';
-
+let randomNumber = Math.random()*100000
+console.log(Math.trunc(randomNumber))
 
 upload.addEventListener('change',() =>{
     const file = upload.files[0];
@@ -88,6 +90,7 @@ generateTicket.addEventListener('click',() =>{
         ticketImage.src = uploadedImage;
         form.classList.add('hidden');
         ticket.classList.remove('hidden');
+        ticketNumber.innerHTML = '#' + Math.trunc(randomNumber);
     }else{
         errorMessage.textContent ='Please fill in all details'
         errorMessage.classList.remove('hidden');
