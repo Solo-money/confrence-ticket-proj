@@ -57,12 +57,14 @@ console.log(Math.trunc(randomNumber))
 upload.addEventListener('change',() =>{
     const file = upload.files[0];
     if(file){
-        let sucessText = document.querySelector('.sucesstext')
-        sucessText.innerHTML= 'You have sucessfully uploaded your image';
-        sucessText.classList.add('text-green-500', 'font-medium')
+        // let sucessText = document.querySelector('.sucesstext')
+        // sucessText.innerHTML= 'You have sucessfully uploaded your image';
+        // sucessText.classList.add('text-green-500', 'font-medium')
         uploadedImage = URL.createObjectURL(file);
         formImage.src = uploadedImage;
         document.querySelector('.form-container').classList.remove('p-2','bg-[#332552]');
+        document.querySelector('.sucesstext').classList.add('hidden');
+        document.querySelector('.removeandchange').classList.remove('hidden');
     }
 });
 
@@ -70,6 +72,8 @@ removeButton.addEventListener('click' , () =>{
     uploadedImage = '';
     formImage.src = "./assets/images/icon-upload.svg"
     document.querySelector('.form-container').classList.add('p-2','bg-[#332552]');
+    document.querySelector('.sucesstext').classList.remove('hidden');
+    document.querySelector('.removeandchange').classList.add('hidden');
 })
 
  changeImage.addEventListener('change' , () =>{
@@ -78,10 +82,12 @@ removeButton.addEventListener('click' , () =>{
         uploadedImage = URL.createObjectURL(file);
         formImage.src = uploadedImage;
         document.querySelector('.form-container').classList.remove('p-2','bg-[#332552]');
+        document.querySelector('.sucesstext').classList.remove('hidden');
+         document.querySelector('.removeandchange').classList.add('hidden');
     }
  })
 
-generateTicket.addEventListener('click',() =>{
+ function ticketGenerate(){
     if(fullName.value !== '' && emailAdress.value !=='' && gitHub.value !== '' && uploadedImage){
         customerName.textContent = fullName.value;
         customerEmail.innerHTML = emailAdress.value;
@@ -95,4 +101,8 @@ generateTicket.addEventListener('click',() =>{
         errorMessage.textContent ='Please fill in all details'
         errorMessage.classList.remove('hidden');
     };
+ }
+
+generateTicket.addEventListener('click',() =>{
+        ticketGenerate()
 });
